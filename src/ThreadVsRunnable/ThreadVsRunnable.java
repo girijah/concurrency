@@ -26,6 +26,7 @@ class ExtendsThread extends Thread {
 
 public class ThreadVsRunnable {
     public static void main(String args[]) throws Exception {
+
         //Multiple threads share the same object.
         ImplementsRunnable rc = new ImplementsRunnable();
         Thread t1 = new Thread(rc);
