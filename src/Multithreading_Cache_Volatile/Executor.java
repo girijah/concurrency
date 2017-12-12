@@ -30,6 +30,8 @@ public class Executor {
 //            e.printStackTrace();
 //        }
 
+
+        // Unless this thread update the running bool variable, all other thread will keep on running forever
         new Thread(new Runnable() {
             @Override
             public void run() {
