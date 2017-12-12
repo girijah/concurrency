@@ -8,11 +8,9 @@ public class VolatileTester {
     public static void main (String[] args) {
 
         // volatile cannot be debugged properly - in fact that's the nature of concurrency
-        // that it is not sequence and it's unpredictable and not work as expected and results are not unique
-
-        // Here name can output null if you run that doesn't mean though volatile variable is defined, other threads not getting it's value
-        // Nevertheless because the thread is already terminated by the time other name set thread start executing. This doesn't mean volatile
-        // didn't do its task/job!
+        // Here name can output null if you run, that doesn't mean though volatile variable is defined, other threads not getting it's value
+        // Nevertheless the reason is that the thread already terminated by the time the other thread that is set with a name start executing.
+        // This doesn't mean volatile didn't do its task/job!
         // volatile keyword in java guarantees that value of the volatile variable will always be read from main memory
 
 
