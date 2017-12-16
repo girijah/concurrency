@@ -54,10 +54,12 @@ public class VolatileTester {
             }
         });
 
-        t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
+//        t1.start();
+//        t2.start();
+//        t3.start();
+//        t4.start();
+
+        
     }
 }
 
@@ -67,6 +69,13 @@ public class VolatileTester {
     private volatile static String objName;
 
     public static Singleton getInstance() {
+
+        // double-checked locking
+        // If you have already constructed the object, the _instance field will not be null, so you won't have to perform the synchronization.
+        /* If one thread creates the object, it has to communicate the contents of its memory to another thread. Otherwise, the object will
+        * just sit in the first thread's memory. How do we communicate the contents of memory to another thread? Well, we can use volatile
+        * variables. That's why helper has to be volatile -- so that other threads see the fully constructed object.*/
+
         if (_instance == null) {
             synchronized (Singleton.class) {
                 if (_instance == null)
