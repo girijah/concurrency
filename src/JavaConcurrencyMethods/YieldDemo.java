@@ -14,9 +14,9 @@ public class YieldDemo {
         MyThread t = new MyThread();
         t.start();
 
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<105; i++) {
             // Control passes to child thread
-            Thread.yield();
+            //Thread.yield();
 
             // After execution of child Thread
             // main thread takes over
@@ -31,8 +31,10 @@ public class YieldDemo {
 class MyThread extends Thread {
 
     public void run() {
-        for (int i=0; i<5 ; i++)
+        for (int i=0; i<100 ; i++) {
             System.out.println(Thread.currentThread().getName() + " in control");
+            yield();
+        }
     }
 }
 
